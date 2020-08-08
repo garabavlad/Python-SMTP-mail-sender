@@ -24,7 +24,7 @@ def send_mail(
         s.starttls()
         s.login(un, ps)
 
-        s.sendmail(mail_to,mail_from,subject +'\n\n'+ mail_body)
+        s.sendmail(mail_from,mail_to,"Subject:"+subject +'\n\n'+ mail_body)
         s.quit()
     except:
         out['status'] = 'failed'
